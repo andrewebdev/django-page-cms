@@ -27,9 +27,7 @@ class Details(object):
         current_page = False
 
         if path is None:
-            raise ValueError(
-                "pages.views.Details class view requires the path argument. "
-                "Check your urls.py file.")
+            path = ''
 
         # for the ones that might have forgotten to pass the language
         # the language is now removed from the page path

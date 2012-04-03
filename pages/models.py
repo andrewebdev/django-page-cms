@@ -253,12 +253,15 @@ class Page(MPTTModel):
             except Exception:
                 pass
         url = self.get_complete_slug(language)
+
         if not language:
             language = settings.PAGE_DEFAULT_LANGUAGE
+
         if settings.PAGE_USE_LANGUAGE_PREFIX:
             return reverse('pages-details-by-path',
                 args=[language, url])
         else:
+            if url == '': return reverse('pages-root-path')
             return reverse('pages-details-by-path', args=[url])
 
     def get_absolute_url(self, language=None):
