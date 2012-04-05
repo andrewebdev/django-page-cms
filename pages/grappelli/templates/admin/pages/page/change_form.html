@@ -1,10 +1,10 @@
 {% extends "admin/change_form.html" %}
-{% load i18n admin_modify adminmedia pages_tags %}
+{% load i18n admin_modify admin_static pages_tags %}
 
 {% block title %}{% trans "Edit" %}{% endblock %}
 
 {% block extrahead %}{{ block.super }}
-<script type="text/javascript" src="{% admin_media_prefix %}js/urlify.js"></script>
+<script type="text/javascript" src="{% static 'admin/js/urlify.js' %}"></script>
 <script type="text/javascript">var media_url = "{{MEDIA_URL}}"; var page_media_url = "{{PAGES_MEDIA_URL}}"</script>
 {% endblock %}
 

@@ -1,4 +1,4 @@
-{% load pages_tags i18n adminmedia cache %}
+{% load pages_tags i18n admin_static cache %}
 
 <tr id="page-row-{{ page.id }}" class="child-of-{{ page.parent_id }} draggable {% cycle 'row1' 'row2' %}">
     <td class="selection-cell"><input class="action-select" type="checkbox" name="_selected_action" value="{{ page.id }}"/></td>
