@@ -20,26 +20,11 @@
 
 
 {% block result_list %}
-<form method="post" action="">
-{% csrf_token %}
-{% if action_form and actions_on_top and cl.full_result_count %}{% admin_actions %}{% endif %}
+    <form method="post" action="">{% csrf_token %}
 
-<div id="toolbar">
-<form id="changelist-search" action="" method="post">
-    <div>
-        <label for="searchbar"><img src="{% static 'admin/img/icon_searchbox.png' %}" alt="{% trans "Search" %}" /></label>
-        <input type="text" size="25" name="q" value="{{q}}" id="searchbar" />
-        <input type="submit" name="g" value="{% trans "Go" %}" />
-    </div>
-</form>
-</div>
-
-<div id="page-list">
-{% include "admin/pages/page/change_list_table.html" %}
-</div>
-{% if action_form and actions_on_bottom and cl.full_result_count %}{% admin_actions %}{% endif %}
-</form>
-{% endblock %}
+        <div id="page-list" class="module changelist-results">
+            {% include "admin/pages/page/change_list_table.html" %}
+        </div>
 
         {% if action_form and actions_on_bottom and cl.full_result_count %}{% admin_actions %}{% endif %}
     </form>
